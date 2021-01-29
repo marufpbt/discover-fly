@@ -1,7 +1,5 @@
-
 function handleTicketChange(ticket, isIncrease) {
-	const ticketInput = document.getElementById(ticket + 'Input');
-	const ticketCount = parseInt(ticketInput.value);
+	const ticketCount = getInputValue(ticket);
 	let ticketNewCount = ticketCount;
 	if (isIncrease == true) {
 		ticketNewCount = ticketCount + 1;
@@ -9,19 +7,14 @@ function handleTicketChange(ticket, isIncrease) {
 	if (isIncrease == false && ticketCount > 0) {
 		ticketNewCount = ticketCount - 1;
 	}
-	ticketInput.value = ticketNewCount;
-
+	document.getElementById(ticket + 'Input').value = ticketNewCount;
 	calculateTotal();
 }
 
 
 function calculateTotal() {
-	const firstClassInput = document.getElementById("firstClassInput");
-	const firstClassCount = parseInt(firstClassInput.value);
-
-	const economyInput = document.getElementById("economyInput");
-	const economyCount = parseInt(economyInput.value);
-
+	const firstClassCount = getInputValue("firstClass");
+	const economyCount = getInputValue("economy");
 	const subTotal = firstClassCount * 150 + economyCount * 100;
 	document.getElementById("subTotal").innerText = subTotal;
 
@@ -33,3 +26,11 @@ function calculateTotal() {
 	const grandTotalInput = document.getElementById("grandTotal");
 	grandTotalInput.innerText = grandTotal;
 }
+
+
+function getInputValue(ticket) {
+	const ticketInput = document.getElementById(ticket + 'Input');
+	const ticketCount = parseInt(ticketInput.value);
+	return ticketCount;
+}
+

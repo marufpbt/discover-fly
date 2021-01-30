@@ -25,6 +25,10 @@ function calculateTotal() {
 	const grandTotal = subTotal + tax;
 	const grandTotalInput = document.getElementById("grandTotal");
 	grandTotalInput.innerText = grandTotal;
+
+	document.getElementById("totalTicektCount").innerText = firstClassCount + economyCount;
+	document.getElementById("totalAmountCount").innerText = " $" + grandTotal;
+	modal()
 }
 
 
@@ -32,5 +36,24 @@ function getInputValue(ticket) {
 	const ticketInput = document.getElementById(ticket + 'Input');
 	const ticketCount = parseInt(ticketInput.value);
 	return ticketCount;
+}
+
+
+function modal() {
+	var modal = document.getElementById("myModal");
+	var btn = document.getElementById("bookingBtn");
+	var span = document.getElementsByClassName("close")[0];
+	btn.onclick = function () {
+		modal.style.display = "block";
+	}
+	span.onclick = function () {
+		modal.style.display = "none";
+	}
+	window.onclick = function (event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+
 }
 

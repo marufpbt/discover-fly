@@ -58,10 +58,10 @@
                     <input class="inp-style inp-width form-control" type="number" id="firstClassInput" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <button class="btn btn-primary" onclick="handleTicketChange('firstClass', true)"><i
-                            class="fas fa-plus"></i></button>
                     <button class="btn btn-primary" onclick="handleTicketChange('firstClass', false)"><i
                             class="fas fa-minus"></i></button>
+                    <button class="btn btn-primary" onclick="handleTicketChange('firstClass', true)"><i
+                            class="fas fa-plus"></i></button>
                 </div>
 
             </div>
@@ -72,10 +72,10 @@
                     <input class="inp-style inp-width form-control" type="number" id="economyInput" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <button class="btn btn-primary" onclick="handleTicketChange('economy', true)"><i
-                            class="fas fa-plus"></i></button>
                     <button class="btn btn-primary" onclick="handleTicketChange('economy', false)"><i
                             class="fas fa-minus"></i></button>
+                    <button class="btn btn-primary" onclick="handleTicketChange('economy', true)"><i
+                            class="fas fa-plus"></i></button>
                 </div>
             </div>
             <div class="calculations">
@@ -106,7 +106,8 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style btn btn-primary">Book Now</button>
+            <!-- Trigger/Open The Modal -->
+            <button class="btn-style btn btn-primary" id="bookingBtn">Book Now</button>
         </div>
 
         <div class="booking-content">
@@ -116,9 +117,30 @@
                 voluptatibus quam</p>
         </div>
         </section>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content text-center">
+                <span class="close text-right btn-close">&times;</span>
+                <h1 class="Display-6 text-success text-center">Congratulations!!</h1>
+                <h2 class="Display-4">You have purchased <span id="totalTicektCount">0</span> tickets </h2>
+                <h2 class="Display-4">Total Amount :<span id="totalAmountCount">0</span> (including VAT) </h2>
+            </div>
+        </div>
+
 
         <!--Thank You-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
         <script src="style.js"></script>
+
 </body>
 
 </html>
